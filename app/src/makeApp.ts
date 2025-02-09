@@ -3,7 +3,9 @@ import Fastify from "fastify";
 import path from "node:path";
 
 export function makeApp() {
-  const app = Fastify();
+  const app = Fastify({
+    logger: true,
+  });
 
   app.register(fastifyAutoload, {
     dir: path.resolve("./dist/plugins"),

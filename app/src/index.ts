@@ -10,3 +10,5 @@ await app.listen({
   host: HOST,
   port: PORT,
 });
+
+app.log.info({}, `Server listening at https://localst${PORT}`);
