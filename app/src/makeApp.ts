@@ -3,9 +3,9 @@ import Fastify from "fastify";
 export function makeApp() {
   const app = Fastify();
 
-  app.get("/chloe", async () => {
+  app.get("/healthz", async () => {
     return {
-      name: "chloe kim",
+      ok: true,
     };
   });
   return app;
