@@ -1,7 +1,7 @@
 import { build } from "esbuild";
 
 build({
-  entryPoints: ["./src/index.ts"],
+  entryPoints: ["./src/**/*.ts"],
   outdir: "dist",
   target: "node20",
   platform: "node",
