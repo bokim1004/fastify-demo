@@ -1,3 +1,6 @@
 {
-  "name": "@fastify-demo/app"
+  "name": "@fastify-demo/app",
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
 }

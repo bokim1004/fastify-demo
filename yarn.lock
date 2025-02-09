@@ -99,6 +99,8 @@ __metadata:
 "@fastify-demo/app@workspace:app":
   version: 0.0.0-use.local
   resolution: "@fastify-demo/app@workspace:app"
+  dependencies:
+    typescript: "npm:^5.7.3"
   languageName: unknown
   linkType: soft
 
