@@ -6,9 +6,9 @@ export default fp(
     await app.register(fastifyCors, {
       preflightContinue: true,
     });
-    console.log("CORS 플러그인 장착");
+    app.log.info("cors plugin init!");
   },
   {
-    name: "cors",
+    name: "app.cors",
   },
 );
