@@ -1,9 +1,16 @@
 {
   "name": "@fastify-demo/app",
   "type": "module",
+  "scripts": {
+    "build": "node ./esbuild.config.js",
+    "start": "node --loader=extensionless ./dist/index.js"
+  },
   "devDependencies": {
     "@types/node": "20",
     "esbuild": "^0.25.0",
     "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "extensionless": "^1.9.9"
   }
 }
