@@ -10,7 +10,8 @@
     "watch": "src",
     "ignore": [
       "dist/**",
-      "node_modules/**"
+      "node_modules/**",
+      "src/web/**"
     ],
     "ext": "ts",
     "exec": "rm -rf ./dist && yarn node ./esbuild.config.js && node --loader=extensionless ./dist/index.js | yarn pino-pretty --singleLine"

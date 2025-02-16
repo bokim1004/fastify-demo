@@ -1157,7 +1157,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-router/node@npm:7.1.5, @react-router/node@npm:^7.1.5":
+"@react-router/node@npm:*, @react-router/node@npm:7.1.5, @react-router/node@npm:^7.1.5":
   version: 7.1.5
   resolution: "@react-router/node@npm:7.1.5"
   dependencies:
@@ -2542,7 +2542,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"isbot@npm:^5.1.22":
+"isbot@npm:*, isbot@npm:^5.1.22":
   version: 5.1.22
   resolution: "isbot@npm:5.1.22"
   checksum: 10c0/377b030dafcbc2e1f6eea36fc2a6072b769baffbd058b1ebc302a9ca1d8656d50039d1696238c9b955ed44a034cabe2bf30a89ab7a0e60f6ef67ffacb394d6c5
