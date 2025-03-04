@@ -1,5 +1,8 @@
+import { useMemo } from "react";
+import { RelayEnvironmentProvider } from "react-relay";
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import favicon from "./assets/favicon.png";
+import { createRelayRenderEnvironment } from "./relay/createRelayRenderEnviroment";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -21,5 +24,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  // 렌더링될 때마다 호출되니까 한번만 생성되게 useMemo로 감싸줌
+  const environment = useMemo(() => createRelayRenderEnvironment(), []);
+  return (
+    <RelayEnvironmentProvider environment={environment}>
+      <Outlet />
+    </RelayEnvironmentProvider>
+  );
 }
