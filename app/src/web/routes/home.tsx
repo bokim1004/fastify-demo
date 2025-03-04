@@ -1,5 +1,7 @@
-import { graphql, loadQuery } from "react-relay";
-import { createRelayLoaderEnvironment } from "../relay/createRelayLoaderEnviroment";
+import { graphql } from "react-relay";
+import type { homeQuery } from "../__relay__/homeQuery.graphql";
+import { relayQueryLoader } from "../relay/relayQureyLoader";
+import { useRelayQueryLoaderData } from "../relay/useRelayQueryLoaderData";
 
 const query = graphql`
   query homeQuery {
@@ -7,14 +9,13 @@ const query = graphql`
   }
 `;
 
-export async function loader() {
-  // 무조건 서버에서만 실행된다!
-
-  const environment = createRelayLoaderEnvironment();
-  const queryRef = loadQuery(environment, query, {});
-  const response = await queryRef.source?.toPromise();
-}
+export const loader = relayQueryLoader<homeQuery>({
+  query,
+  variables: () => ({}),
+});
 
 export default function Home() {
-  return <div> Hello world</div>;
+  const data = useRelayQueryLoaderData<typeof loader>(query);
+
+  return <div>{data.ping}</div>;
 }
